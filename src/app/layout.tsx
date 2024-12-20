@@ -4,8 +4,9 @@ import { ReactNode } from "react";
 import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Smart or Idiot ?",
-  description: "Test ton niveau de culture G !",
+  title: "Secret Santa",
+  description: "Chaque jour, une citation pour te rappeler que la vie, c’est comme un Secret Santa : imprévisible, parfois drôle, et souvent bizarre. Clique, savoure, répète !",
+  icons: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎅</text></svg>",
 };
 
 const inter = Inter({
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
