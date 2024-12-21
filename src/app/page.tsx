@@ -17,14 +17,19 @@ export default function Home() {
   const days = getAllDays();
   const [quote, setQuote] = useState<{ quote: string; author?: string } | null>(null);
   const [index, setIndex] = useState<number | null>(null);
+  const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
 
   useEffect(() => {
     if (typeof index !== "number") return;
     setQuote(quotes[index]);
   }, [index]);
 
+  useEffect(() => {
+    setCurrentDate(dayjs());
+  }, []);
+
   const isChristmas = (day: Dayjs) => {
-    return day.get("date") === 25 && day.get("month") === 11;
+    return day.get("date") === 25 && day.get("month") === 11 && day.get("year") === 2024;
   };
 
   return (
@@ -35,7 +40,7 @@ export default function Home() {
           <Dialog key={day.toString()}>
             <DialogTrigger asChild>
               <Button
-                disabled={day.isAfter(dayjs())}
+                disabled={day.isAfter(currentDate)}
                 onClick={() => {
                   if (dayjs(day).isToday()) confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
                   setIndex(index);

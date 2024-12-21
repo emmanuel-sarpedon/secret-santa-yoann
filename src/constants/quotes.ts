@@ -4,8 +4,6 @@ const quotes = [
   { quote: "La discipline est le pont entre les objectifs et leur réalisation.", author: "Jim Rohn" },
   { quote: "Le pessimisme est affaire d’humeur ; l’optimisme est affaire de volonté.", author: "Alain (Emile Auguste Chartier)" },
   { quote: "Il n’y a pas de futur, pas de passé. Il n’y a que le présent.", author: "Hector Garcia Puigcerver, Ikigai: Le secret japonais pour une vie longue et heureuse" },
-  { quote: "Il n’y a pas d’un coté l’échec et de l’autre la réussite, l’un est une étape, l’autre la destination !" },
-  { quote: "Ce que nous sommes est le résultat de ce que nous avons pensé.", author: "Bouddha" },
   { quote: "Vous devez apprendre des erreurs des autres car vous ne pourrez vivre assez longtemps pour toutes les faire vous-mêmes.", author: "Anonyme" },
   { quote: "Tout peut être pris chez un homme, sauf une chose: la dernière des libertés humaines: choisir son attitude dans toutes les circonstances, choisir sa propre voie.", author: "Hector Garcia Puigcerver, Ikigai: Le secret japonais pour une vie longue et heureuse" },
   { quote: "Ce n’est pas la force, mais la persévérance, qui fait les grandes œuvres.", author: "Samuel Johnson" },
