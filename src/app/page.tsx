@@ -17,7 +17,7 @@ export default function Home() {
   const days = getAllDays();
   const [quote, setQuote] = useState<{ quote: string; author?: string } | null>(null);
   const [index, setIndex] = useState<number | null>(null);
-  const [currentDate, setCurrentDate] = useState<Dayjs>(dayjs());
+  const [currentDate, setCurrentDate] = useState<Dayjs | null>(null);
 
   useEffect(() => {
     if (typeof index !== "number") return;
@@ -40,13 +40,13 @@ export default function Home() {
           <Dialog key={day.toString()}>
             <DialogTrigger asChild>
               <Button
-                disabled={day.isAfter(currentDate)}
+                disabled={!currentDate || day.diff(currentDate, "day", true) > 0}
                 onClick={() => {
                   if (dayjs(day).isToday()) confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
                   setIndex(index);
                 }}
                 variant={dayjs(day).isToday() ? "default" : "outline"}
-                className={cn("relative", { "bg-red-500 text-white": day.isBefore(dayjs()) })}
+                className={cn("relative", { "bg-red-500 text-white": day.isBefore(currentDate) })}
               >
                 {index + 1}
                 {<p className={cn("absolute -top-4", { hidden: !isChristmas(day) })}>🎄</p>}
