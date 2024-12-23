@@ -45,7 +45,7 @@ export default function Home() {
                   if (dayjs(day).isToday()) confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
                   setIndex(index);
                 }}
-                variant={dayjs(day).isToday() ? "default" : "outline"}
+                variant={"outline"}
                 className={cn("relative", { "bg-red-500 text-white": day.isBefore(currentDate) })}
               >
                 {index + 1}
